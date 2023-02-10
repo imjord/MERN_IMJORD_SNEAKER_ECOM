@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* make the nav stick to the top even after scrolling */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 3.5rem 2rem;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+}
+
+/* nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background: #333;
+    color: #fff;
+    padding: 3.5rem 2rem;
+    background-color: transparent;
+    width: 100%;
+   
+} */
+
+.left h3 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+  
+}
+
+nav ul li {
+    color: #fff;
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    padding: 18px 10px;
+}
+
+
+.links {
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    color: #a4508b;
+    transition: 1.0s;
+}
