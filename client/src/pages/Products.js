@@ -1,9 +1,9 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useContext} from "react";
 import "./Products.css"
+import {ProductsContext} from "../context/ProductsContext";
 
-
-const Products = (props) => {
-    const {getProducts, products} = props;
+const Products = () => {
+    const {products, getProducts}  = useContext(ProductsContext);
     useEffect(() => {
         getProducts();
     }, [])
