@@ -1,23 +1,35 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Products.css"
 
 
-const Products = () => {
+const Products = (props) => {
+    const {getProducts, products} = props;
+    useEffect(() => {
+        getProducts();
+    }, [])
     return (
-    <div className="main-section">
-    <h1>Sneakers Page</h1>
-    <div className="products">
-        <div className="product">
-            <img className="product-img" src="https://images.unsplash.com/photo-1517436073-3b3a7e7f8d9c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2tlZXBhcnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" alt="sneaker" />
-            <div className="product-name">Nike Air Max 270</div>
-            <div className="product-price">$120</div>
-            </div>
-            <div className="product">
-            <img className="product-img" src="https://images.unsplash.com/photo-1517436073-3b3a7e7f8d9c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2tlZXBhcnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" alt="sneaker" />
-            <div className="product-name">Nike Air Max 280</div>
-            <div className="product-price">$120</div>
-            </div>
-    </div>
+    <div className="product-section">
+        <div className="page-title">
+        <h1>Sneakers</h1>
+        <h2>Made</h2>
+        <h3>By</h3>
+        <h4>Vade</h4>
+        </div>
+        <div className="product-list">
+        {products.map((product) => {
+                return (
+                    
+                    <div className="products">
+                    <div className="product">
+                    <img className="product-img" src={`assets/images/${product.image}`} alt="sneaker" />
+                    <div className="product-name">{product.name}</div>
+                    <div className="product-price">{`$${product.price}`}</div>
+                    </div>
+                    </div>
+                  
+                )
+            })}
+        </div>   
     </div>
     )   
 }
