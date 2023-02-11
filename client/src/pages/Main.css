@@ -1,16 +1,22 @@
 .main-section {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 200px;
-    
+
 }
 /* style the main section under the fixed nav */
 
 .main-section h1 {
+    display: flex;
+    justify-content: center;
     font-size: 3rem;
     font-weight: 700;
-    color: #ffffff;
+    color: black;
     margin-bottom: 20px;
+    width: 100%;
+    
+    
 }
