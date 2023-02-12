@@ -1,21 +1,36 @@
 import React, {useContext, useState, useEffect} from "react";
 import {ProductsContext} from "../context/ProductsContext";
 import "./Cart.css";
+import {Elements} from "@stripe/react-stripe-js";
+import {loadStripe} from "@stripe/stripe-js";
+import CheckoutForm from "../components/CheckoutForm/CheckoutForm";
 
+const stripePromise = loadStripe("pk_test_51MaYxoEGcX5qIHP0hTkakb8nlVfUgG9RgAPYyb46y1PW9GWDypLr5pwsyRhFEaKN4dhpyb3HXeCKPHCY2jXpGXqK007be2obBR");
 
 
 
 const Cart = () => {
-    const {cart, removeFromCart, addToCart} = useContext(ProductsContext);
+    const {cart, removeFromCart, addToCart, removeAllFromCart} = useContext(ProductsContext);
+    const [pay, setPay] = useState(false);
+
+    const payFunction = () => {
+        setPay(true);
+        removeAllFromCart();
+        let total = cart.reduce((acc, item) => acc + item.price, 0);
+        alert(`Your total is $${total} and your order has been placed!`);
+    
+    }
+
+  
 
     useEffect(() => {
         
 
     }, [cart])
     return (
+     
     <div className="main-cart-section">
         <div className="cart-title">
-        <h1>Cart Page</h1>
         </div>
         <div className="cart-wrapper">
         
@@ -46,13 +61,15 @@ const Cart = () => {
                     <h3>{` :  $${cart.reduce((acc, item) => acc + item.price, 0)}`}</h3>
                     </div>
                     <div className="checkout-btn">
-                        <button>Checkout</button>
+                        <button onClick={() => payFunction()}>Checkout</button>
                         </div>
                     </div>  }
         </div>
+        {/* {pay ?   <Elements stripe={stripePromise}> <CheckoutForm /></Elements> : null} */}
         
     
     </div>
+    
     )
 }
 

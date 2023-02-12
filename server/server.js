@@ -3,6 +3,11 @@ const app = express();
 const port = process.env.PORT || 3001;
 const cors = require('cors');
 const db = require('./config/connection');
+const publickey = process.env.PUBLIC_KEY;
+
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 
 // import routes
 const ProductRoutes = require('./routes/ProductRoutes');

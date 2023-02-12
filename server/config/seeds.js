@@ -18,6 +18,12 @@ const productData = [
         releaseDate: '2021-01-01'
     },
     {
+        name: 'Nike Air Force 1',
+        price: 120,
+        image: '1.jpg',
+        releaseDate: '2021-01-01'
+    },
+    {
         name: 'Nike Air Max 270',
         price: 120,
         image: '2.jpg',

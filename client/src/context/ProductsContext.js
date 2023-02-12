@@ -22,11 +22,14 @@ const ProductsProvider = (props) => {
     const removeFromCart = (productid) => {
         setCart(cart.filter((item) => item._id !== productid));
     }
+    const removeAllFromCart = () => {
+        setCart([]);
+    }
 
     
 
     return (
-        <ProductsContext.Provider value={{products, getProducts, addToCart, removeFromCart, cart, loading}}>{props.children}</ProductsContext.Provider>
+        <ProductsContext.Provider value={{products, getProducts, addToCart, removeFromCart, cart, loading, removeAllFromCart}}>{props.children}</ProductsContext.Provider>
     )
 }
 

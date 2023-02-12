@@ -9,6 +9,9 @@ import ErrorPage from './pages/ErrorPage';
 import Products from './pages/Products.js';
 import Cart from './pages/Cart.js';
 import { ProductsContext } from './context/ProductsContext';
+// import dotenv from 'dotenv';
+
+
 
 
 
