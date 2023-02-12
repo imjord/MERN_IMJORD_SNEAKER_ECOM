@@ -1,0 +1,123 @@
+.main-cart-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    
+}
+
+.cart-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px  rgb(255, 255, 255);
+    width: 50%;
+}
+
+.cart-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.checkout-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20%;
+    justify-content: flex-start;
+    
+}
+
+.checkout-title {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px  rgb(255, 255, 255);
+    width: 50%;
+}
+
+.checkout-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px  rgb(255, 255, 255);
+    width: 50%;
+}
+
+.checkout-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.checkout-btn button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.cart-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 10px;
+    padding: 25px;
+    width: 80%;
+    flex-wrap: wrap;
+
+
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15px auto;
+    padding: 25px;
+    width: 100%;
+}
+
+
+
+.remove-from-cart-btn{
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

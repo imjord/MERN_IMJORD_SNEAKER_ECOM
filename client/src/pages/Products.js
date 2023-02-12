@@ -3,7 +3,10 @@ import "./Products.css"
 import {ProductsContext} from "../context/ProductsContext";
 
 const Products = () => {
-    const {products, getProducts}  = useContext(ProductsContext);
+    const {products, getProducts, cart, addToCart }  = useContext(ProductsContext);
+
+    // add 
+
     useEffect(() => {
         getProducts();
     }, [])
@@ -23,7 +26,11 @@ const Products = () => {
                     <div className="product">
                     <img className="product-img" src={`assets/images/${product.image}`} alt="sneaker" />
                     <div className="product-name">{product.name}</div>
-                    <div className="product-price">{`$${product.price}`}</div>
+                    <div className="product-price">{`$${product.price}`}</div> 
+                    {/* add to cart btn */}
+                    <div className="add-to-cart">
+                    <button className="add-to-cart-btn" onClick={() => addToCart(product)}>Add to Cart</button>
+                    </div>
                     </div>
                     </div>
                   

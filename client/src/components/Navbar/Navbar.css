@@ -60,3 +60,16 @@ nav ul li:hover {
     color: #a4508b;
     transition: 1.0s;
 }
+
+.cart-nav {
+    display: flex;
+}
+
+.cart-number {
+    position: relative;
+    
+    color: black;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
