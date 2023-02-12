@@ -3,7 +3,7 @@ import "./Products.css"
 import {ProductsContext} from "../context/ProductsContext";
 
 const Products = () => {
-    const {products, getProducts, cart, addToCart }  = useContext(ProductsContext);
+    const {products, getProducts, cart, addToCart, loading }  = useContext(ProductsContext);
 
     // add 
 
@@ -18,7 +18,7 @@ const Products = () => {
         <h3>By</h3>
         <h4>Vade</h4>
         </div>
-        <div className="product-list">
+        {loading ? <h1>Backend is either offline or loading...</h1> : <div className="product-list">
         {products.map((product) => {
                 return (
                     
@@ -36,7 +36,7 @@ const Products = () => {
                   
                 )
             })}
-        </div>   
+        </div>   }
     </div>
     )   
 }
