@@ -4,10 +4,14 @@ const port = process.env.PORT || 3001;
 const cors = require('cors');
 const db = require('./config/connection');
 const publickey = process.env.PUBLIC_KEY;
+const payment = require('./routes/Payment');
 
 if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
+
+
+
 
 // import routes
 const ProductRoutes = require('./routes/ProductRoutes');
@@ -19,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use("/api", ProductRoutes);
+app.use("/api", payment);
 
 // listen on port 3001
 // db connection

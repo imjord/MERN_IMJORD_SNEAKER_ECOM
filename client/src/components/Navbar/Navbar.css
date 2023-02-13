@@ -69,7 +69,7 @@ nav ul li:hover {
     position: relative;
     
     color: black;
-    padding: 0.2rem 0.5rem;
+    padding: 5px;
     border-radius: 50%;
     font-size: 0.8rem;
 }

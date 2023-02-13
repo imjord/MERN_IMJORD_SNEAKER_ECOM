@@ -1,27 +1,62 @@
 import React, {useContext, useState, useEffect} from "react";
 import {ProductsContext} from "../context/ProductsContext";
 import "./Cart.css";
-import {Elements} from "@stripe/react-stripe-js";
-import {loadStripe} from "@stripe/stripe-js";
-import CheckoutForm from "../components/CheckoutForm/CheckoutForm";
 
-const stripePromise = loadStripe("pk_test_51MaYxoEGcX5qIHP0hTkakb8nlVfUgG9RgAPYyb46y1PW9GWDypLr5pwsyRhFEaKN4dhpyb3HXeCKPHCY2jXpGXqK007be2obBR");
+import { CardElement, Elements, useStripe, useElements } from "@stripe/react-stripe-js";
+
 
 
 
 const Cart = () => {
     const {cart, removeFromCart, addToCart, removeAllFromCart} = useContext(ProductsContext);
-    const [pay, setPay] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(null);
+    const stripe = useStripe();
+    const elements = useElements();
 
-    const payFunction = () => {
-        setPay(true);
+
+    const successfulPaymet = () => {
         removeAllFromCart();
-        let total = cart.reduce((acc, item) => acc + item.price, 0);
-        alert(`Your total is $${total} and your order has been placed!`);
-    
+        setSuccess(true);
     }
 
-  
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const {error, paymentMethod} = await stripe.createPaymentMethod({
+            type: "card",
+            card: elements.getElement(CardElement)
+        });
+        if (!error) {
+            try {
+                const {id} = paymentMethod;
+                const response = await fetch("http://localhost:3001/api/payment", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        amount: cart.reduce((acc, item) => acc + item.price, 0),
+                        id
+                    })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    console.log("Successful payment");
+                    successfulPaymet()
+                    
+                }
+            } catch (error) {
+                console.log("Error", error);
+                setError(error.message);
+            }
+        } else {
+            console.log(error.message);
+        }
+    };
+
+
+        
 
     useEffect(() => {
         
@@ -30,6 +65,7 @@ const Cart = () => {
     return (
      
     <div className="main-cart-section">
+        {success ? <div className="success-message">Stripe Payment Successful. Thank you for using my website.</div> : null}
         <div className="cart-title">
         </div>
         <div className="cart-wrapper">
@@ -55,14 +91,22 @@ const Cart = () => {
         {cart.length === 0 ? null : <div className="checkout-section">
             <div className="checkout-title">
                 <h2>Checkout</h2>
+                
+        <div className="card">
+        <form id="payment-form" onSubmit={handleSubmit}>
+            <label htmlFor="card-element">Credit or debit card</label>
+            <div className="label"> <CardElement /> </div>
+        <button type="submit">Pay</button>
+        </form>
+        </div>
+       
                 </div>
                 <div className="checkout-total">
                     <h3>Total  </h3>
                     <h3>{` :  $${cart.reduce((acc, item) => acc + item.price, 0)}`}</h3>
+                    
                     </div>
-                    <div className="checkout-btn">
-                        <button onClick={() => payFunction()}>Checkout</button>
-                        </div>
+                    
                     </div>  }
         </div>
         {/* {pay ?   <Elements stripe={stripePromise}> <CheckoutForm /></Elements> : null} */}
