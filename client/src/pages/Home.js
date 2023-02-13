@@ -1,12 +1,15 @@
 import React from "react";
 import "./Main.css";
+import shoe from "./shoe.gif"
 
 
 
 const Home = () => {
     return (
-    <div className="main-section">
-    <h1>Home Page</h1>
+    <div className="landing-page">
+    <div className="shoe-gif">
+    <img src={shoe} alt="shoe" />
+    </div>
     </div>
     )   
     }
