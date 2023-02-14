@@ -11,7 +11,7 @@
 <div align="center">
   
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">VADE SNEAKERS</h3>
 
   <p align="center">
     A Sneakers Ecommerce Website Made With The MERN Stack!
