@@ -71,12 +71,12 @@ A Project I made so that I could better learn React/Node. I created a Ecommerce 
 
 
 
-* https://img.shields.io/badge/React-.js-blue
-* https://img.shields.io/badge/Node-.js-yellowgreen
-* https://img.shields.io/badge/Express-.js-yellowgreen
-* https://img.shields.io/badge/Stripe-.js-orange
-* https://img.shields.io/badge/Heroku-Hosting-red
-* https://img.shields.io/badge/MONGO-DB-green
+* ![image]https://img.shields.io/badge/React-.js-blue
+* ![image]https://img.shields.io/badge/Node-.js-yellowgreen
+* ![image]https://img.shields.io/badge/Express-.js-yellowgreen
+* ![image]https://img.shields.io/badge/Stripe-.js-orange
+* ![image]https://img.shields.io/badge/Heroku-Hosting-red
+* ![image]https://img.shields.io/badge/MONGO-DB-green
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
