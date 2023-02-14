@@ -5,6 +5,7 @@ const cors = require('cors');
 const db = require('./config/connection');
 const publickey = process.env.PUBLIC_KEY;
 const payment = require('./routes/Payment');
+const path = require('path');
 
 if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
