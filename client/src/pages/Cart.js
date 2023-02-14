@@ -30,7 +30,7 @@ const Cart = () => {
         if (!error) {
             try {
                 const {id} = paymentMethod;
-                const response = await fetch("http://localhost:3001/api/payment", {
+                const response = await fetch("/api/payment", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

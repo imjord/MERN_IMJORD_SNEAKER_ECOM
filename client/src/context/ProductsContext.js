@@ -10,7 +10,7 @@ const ProductsProvider = (props) => {
 
 
     const getProducts = async () => {
-        const res = await axios.get('http://localhost:3001/api/products');
+        const res = await axios.get('/api/products');
         setProducts(res.data.products);
         setLoading(false);
       }
