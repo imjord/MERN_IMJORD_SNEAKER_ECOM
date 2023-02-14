@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Product = require('../models/Products');
+require('dotenv').config();
 
-
-
-mongoose.connect('mongodb://127.0.0.1:27017/vadeSneakers').then(() => {
+// 'mongodb://127.0.0.1:27017/vadeSneakers'
+mongoose.connect(process.env.MONGODB).then(() => {
     console.log('product data seeded');
 }).catch(err => {
     console.log(err);

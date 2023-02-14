@@ -24,7 +24,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", ProductRoutes);
 app.use("/api", payment);
+app.use(express.static(path.join(__dirname, '../client/build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+}
 
+);
 // listen on port 3001
 // db connection
 db.once('open', () => {
