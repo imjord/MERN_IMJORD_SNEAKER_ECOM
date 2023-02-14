@@ -1,11 +1,10 @@
 # MERN_IMJORD_SNEAKER_ECOM
 Mern Sneaker Ecom Site
 
+![GitHub contributors](https://img.shields.io/github/contributors/imjord/MERN_IMJORD_SNEAKER_ECOM?style=for-the-badge)
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-  
+
+
+
+
+
